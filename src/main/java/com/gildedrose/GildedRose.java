@@ -9,7 +9,7 @@ class GildedRose {
 
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
-            if (!items[i].name.equals("Aged Brie") && !isABackstagePass(items[i])) {
+            if (!isAgedBrie(items[i]) && !isABackstagePass(items[i])) {
                 if (items[i].quality > 0) {
                     if (!isASulfuras(items[i])) {
                         items[i].quality = items[i].quality - 1;
@@ -36,7 +36,7 @@ class GildedRose {
             }
 
             if (items[i].sellIn < 0) {
-                if (!items[i].name.equals("Aged Brie")) {
+                if (!isAgedBrie(items[i])) {
                     if (!isABackstagePass(items[i])) {
                         if (items[i].quality > 0) {
                             if (!isASulfuras(items[i])) {
@@ -51,6 +51,10 @@ class GildedRose {
                 }
             }
         }
+    }
+
+    private boolean isAgedBrie (final Item item) {
+        return item.name.equals("Aged Brie");
     }
 
     private void decreaseQuality (final int i) {

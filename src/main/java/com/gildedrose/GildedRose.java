@@ -16,8 +16,8 @@ class GildedRose {
                     }
                 }
             } else {
+                increaseQuality(items[i]);
                 if (items[i].quality < 50) {
-                    increaseQuality(items[i]);
 
                     if (isABackstagePass(items[i])) {
                         if (items[i].sellIn < 11) {

@@ -1,5 +1,9 @@
 package com.gildedrose.domain;
 
+import io.vavr.control.Option;
+
+import java.util.function.Function;
+
 public class BackstagePass extends com.gildedrose.domain.Item {
     protected BackstagePass (final com.gildedrose.Item item) {
         super(item);
@@ -24,5 +28,14 @@ public class BackstagePass extends com.gildedrose.domain.Item {
             item.quality = 0;
         }
         return this;
+    }
+
+    public static Function<com.gildedrose.Item, Option<Item>> factory () {
+        return (item) -> {
+            if (BackstagePass.from(item).isABackstagePass()) {
+                return Option.of(BackstagePass.from(item));
+            }
+            return Option.none();
+        };
     }
 }

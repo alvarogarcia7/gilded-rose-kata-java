@@ -63,7 +63,7 @@ public class Item {
         return this;
     }
 
-    public static Function<Item, Option<Item>> factory(){
-        return (item) -> Option.none();
+    public static Function<com.gildedrose.Item, Option<Item>> factory(){
+        return (item1 -> Option.of(Item.from(item1)));
     }
 }

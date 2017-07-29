@@ -1,27 +1,23 @@
 package com.gildedrose.domain;
 
-import com.gildedrose.*;
+import io.vavr.control.Option;
+
+import java.util.function.Function;
 
 public class Factory {
-    public Factory (final Object factory, final Object factory1, final Object factory2, final Object factory3) {
+    private final Function<com.gildedrose.Item, Option<Item>>[] factories;
+
+    public Factory (final Function<com.gildedrose.Item, Option<Item>>... factories) {
+        this.factories = factories;
     }
 
     public Item build (final com.gildedrose.Item item) {
-        com.gildedrose.domain.Item valueObject = com.gildedrose.domain.Item.from(item);
-        if (toVO(item).isAgedBrie()) {
-            valueObject = Brie.from(item);
+        for (final Function<com.gildedrose.Item, Option<Item>> factory : factories) {
+            Option<Item> apply = factory.apply(item);
+            if (apply.isDefined()) {
+                return apply.get();
+            }
         }
-        if (toVO(item).isABackstagePass()) {
-            valueObject = BackstagePass.from(item);
-        }
-        if (toVO(item).isASulfuras()) {
-            valueObject = Sulfuras.from(item);
-        }
-        return valueObject;
+        throw new RuntimeException("This item does not match any of the previous rules");
     }
-
-    private Item toVO (final com.gildedrose.Item item) {
-        return Item.from(item);
-    }
-
 }

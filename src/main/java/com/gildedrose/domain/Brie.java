@@ -1,5 +1,9 @@
 package com.gildedrose.domain;
 
+import io.vavr.control.Option;
+
+import java.util.function.Function;
+
 public class Brie extends Item {
     private Brie (final com.gildedrose.Item item) {
         super(item);
@@ -17,5 +21,14 @@ public class Brie extends Item {
             increaseQuality();
         }
         return this;
+    }
+
+    public static Function<com.gildedrose.Item, Option<Item>> factory () {
+        return (item) -> {
+            if (Item.from(item).isAgedBrie()) {
+                return Option.of(Brie.from(item));
+            }
+            return Option.none();
+        };
     }
 }

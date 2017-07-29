@@ -27,8 +27,7 @@ class GildedRose {
             }
             return;
         }
-        if (toVO(item).isAgedBrie()) {
-        } else if (toVO(item).isABackstagePass()) {
+        if (toVO(item).isABackstagePass()) {
             increaseQuality(item);
             if (item.sellIn < 11) {
                 increaseQuality(item);
@@ -46,8 +45,7 @@ class GildedRose {
         }
 
         if (isExpired(item)) {
-            if (toVO(item).isAgedBrie()) {
-            } else if (toVO(item).isABackstagePass()) {
+            if (toVO(item).isABackstagePass()) {
                 item.quality = 0;
             } else if (!toVO(item).isASulfuras()) {
                 decreaseQuality(item);

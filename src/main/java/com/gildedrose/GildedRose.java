@@ -9,38 +9,38 @@ class GildedRose {
 
     public void updateQuality () {
         for (int i = 0; i < items.length; i++) {
-            updateQuality(i);
+            updateQuality(items[i]);
         }
     }
 
-    private void updateQuality (final int i) {
-        if (isAgedBrie(items[i])) {
-            increaseQuality(items[i]);
-        } else if (isABackstagePass(items[i])) {
-            increaseQuality(items[i]);
-            if (items[i].sellIn < 11) {
-                increaseQuality(items[i]);
+    private void updateQuality (final Item item) {
+        if (isAgedBrie(item)) {
+            increaseQuality(item);
+        } else if (isABackstagePass(item)) {
+            increaseQuality(item);
+            if (item.sellIn < 11) {
+                increaseQuality(item);
             }
 
-            if (items[i].sellIn < 6) {
-                increaseQuality(items[i]);
+            if (item.sellIn < 6) {
+                increaseQuality(item);
             }
-        } else if (!isASulfuras(items[i])) {
-            decreaseQuality(items[i]);
+        } else if (!isASulfuras(item)) {
+            decreaseQuality(item);
         }
 
-        if (!isASulfuras(items[i])) {
-            decreaseSellIn(items[i]);
+        if (!isASulfuras(item)) {
+            decreaseSellIn(item);
         }
 
-        if (isExpired(items[i])) {
-            if (isAgedBrie(items[i])) {
-                increaseQuality(items[i]);
+        if (isExpired(item)) {
+            if (isAgedBrie(item)) {
+                increaseQuality(item);
             } else {
-                if (isABackstagePass(items[i])) {
-                    items[i].quality = 0;
-                } else if (!isASulfuras(items[i])) {
-                    decreaseQuality(items[i]);
+                if (isABackstagePass(item)) {
+                    item.quality = 0;
+                } else if (!isASulfuras(item)) {
+                    decreaseQuality(item);
                 }
             }
         }

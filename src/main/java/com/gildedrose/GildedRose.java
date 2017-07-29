@@ -34,10 +34,8 @@ class GildedRose {
                 } else {
                     if (isABackstagePass(items[i])) {
                         items[i].quality = 0;
-                    } else {
-                        if (!isASulfuras(items[i])) {
-                            decreaseQuality(items[i]);
-                        }
+                    } else if (!isASulfuras(items[i])) {
+                        decreaseQuality(items[i]);
                     }
                 }
             }

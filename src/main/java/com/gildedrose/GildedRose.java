@@ -1,10 +1,12 @@
 package com.gildedrose;
 
 class GildedRose {
+    private final Items itemsVO;
     Item[] items;
 
     public GildedRose (Item[] items) {
         this.items = items;
+        this.itemsVO = new Items(items);
     }
 
     public void updateQuality () {

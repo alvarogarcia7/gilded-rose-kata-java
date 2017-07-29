@@ -19,7 +19,7 @@ class GildedRose {
     }
 
     private void updateQuality (final Item item) {
-        if (isAgedBrie(item)) {
+        if (toVO(item).isAgedBrie()) {
             increaseQuality(item);
         } else if (toVO(item).isABackstagePass()) {
             increaseQuality(item);
@@ -39,7 +39,7 @@ class GildedRose {
         }
 
         if (isExpired(item)) {
-            if (isAgedBrie(item)) {
+            if (toVO(item).isAgedBrie()) {
                 increaseQuality(item);
             } else {
                 if (toVO(item).isABackstagePass()) {
@@ -59,10 +59,6 @@ class GildedRose {
         if (item.quality > 0) {
             item.quality = item.quality - 1;
         }
-    }
-
-    private boolean isAgedBrie (final Item item) {
-        return toVO(item).isAgedBrie();
     }
 
     private void decreaseSellIn (final Item item) {

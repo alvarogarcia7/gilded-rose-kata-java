@@ -3,6 +3,7 @@ package com.gildedrose;
 import com.gildedrose.domain.BackstagePass;
 import com.gildedrose.domain.Brie;
 import com.gildedrose.domain.Items;
+import com.gildedrose.domain.Sulfuras;
 
 class GildedRose {
     private final Items itemsVO;
@@ -22,13 +23,13 @@ class GildedRose {
 
     private Item updateQuality (final Item item) {
         if (toVO(item).isAgedBrie()) {
-            return updateQualityToAgedBrie(item);
+            return Brie.from(item).updateQuality().toDTO();
         }
         if (toVO(item).isABackstagePass()) {
             return BackstagePass.from(item).updateQuality().toDTO();
         }
         if (toVO(item).isASulfuras()) {
-            return item;
+            return Sulfuras.from(item).updateQuality().toDTO();
         }
         decreaseQuality(item);
         decreaseSellIn(item);
@@ -36,10 +37,6 @@ class GildedRose {
             decreaseQuality(item);
         }
         return item;
-    }
-
-    private Item updateQualityToAgedBrie (final Item item) {
-        return Brie.from(item).updateQuality().toDTO();
     }
 
     private Item decreaseQuality (final Item item) {

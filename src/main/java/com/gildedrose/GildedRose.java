@@ -2,7 +2,6 @@ package com.gildedrose;
 
 import com.gildedrose.domain.BackstagePass;
 import com.gildedrose.domain.Brie;
-import com.gildedrose.domain.Items;
 import com.gildedrose.domain.Sulfuras;
 
 class GildedRose {

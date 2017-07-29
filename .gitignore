@@ -6,3 +6,7 @@ target/
 .project
 bin/
 .settings/
+
+#golden-master test execution
+src/test/resources/golden-master/*.actual
+

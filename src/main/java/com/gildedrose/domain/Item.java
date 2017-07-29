@@ -27,14 +27,16 @@ public class Item {
         return item.sellIn < 0;
     }
 
-    public void decreaseSellIn () {
+    public Item decreaseSellIn () {
         item.sellIn = item.sellIn - 1;
+        return this;
     }
 
-    public void increaseQuality () {
+    public Item increaseQuality () {
         if (item.quality < 50) {
             item.quality = item.quality + 1;
         }
+        return this;
     }
 
     public com.gildedrose.Item toDTO () {

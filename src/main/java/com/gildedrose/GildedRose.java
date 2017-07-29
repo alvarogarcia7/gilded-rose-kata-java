@@ -62,14 +62,12 @@ class GildedRose {
         return toVO(item).decreaseQuality().toDTO();
     }
 
-    private void decreaseSellIn (final Item item) {
-        item.sellIn = item.sellIn - 1;
+    private Item decreaseSellIn (final Item item) {
+        return toVO(item).decreaseSellIn().toDTO();
     }
 
-    private void increaseQuality (final Item item) {
-        if (item.quality < 50) {
-            item.quality = item.quality + 1;
-        }
+    private Item increaseQuality (final Item item) {
+        return toVO(item).increaseQuality().toDTO();
     }
 
     private com.gildedrose.domain.Item toVO (final Item item) {

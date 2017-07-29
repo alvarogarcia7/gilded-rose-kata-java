@@ -22,6 +22,11 @@ class GildedRose {
     }
 
     private Item updateQuality (final Item item) {
+        com.gildedrose.domain.Item valueObject = createItem(item);
+        return valueObject.updateQuality().toDTO();
+    }
+
+    private com.gildedrose.domain.Item createItem (final Item item) {
         com.gildedrose.domain.Item valueObject = com.gildedrose.domain.Item.from(item);
         if (toVO(item).isAgedBrie()) {
             valueObject = Brie.from(item);
@@ -32,7 +37,7 @@ class GildedRose {
         if (toVO(item).isASulfuras()) {
             valueObject = Sulfuras.from(item);
         }
-        return valueObject.updateQuality().toDTO();
+        return valueObject;
     }
 
     private Item decreaseQuality (final Item item) {

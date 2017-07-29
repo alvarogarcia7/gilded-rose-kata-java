@@ -20,10 +20,8 @@ class GildedRose {
                 if (items[i].sellIn < 6) {
                     increaseQuality(items[i]);
                 }
-            } else {
-                if (!isASulfuras(items[i])) {
-                    decreaseQuality(items[i]);
-                }
+            } else if (!isASulfuras(items[i])) {
+                decreaseQuality(items[i]);
             }
 
             if (!isASulfuras(items[i])) {

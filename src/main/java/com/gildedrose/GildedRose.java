@@ -36,9 +36,7 @@ class GildedRose {
                         items[i].quality = 0;
                     } else {
                         if (!isASulfuras(items[i])) {
-                            if (items[i].quality > 0) {
-                                items[i].quality = items[i].quality - 1;
-                            }
+                            decreaseQuality(items[i]);
                         }
                     }
                 }

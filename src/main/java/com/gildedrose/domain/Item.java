@@ -18,4 +18,8 @@ public class Item {
     public boolean isASulfuras () {
         return item.name.equals("Sulfuras, Hand of Ragnaros");
     }
+
+    public boolean isABackstagePass () {
+        return item.name.equals("Backstage passes to a TAFKAL80ETC concert");
+    }
 }

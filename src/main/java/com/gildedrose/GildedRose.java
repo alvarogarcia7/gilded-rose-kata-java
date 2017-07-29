@@ -21,7 +21,7 @@ class GildedRose {
     private void updateQuality (final Item item) {
         if (isAgedBrie(item)) {
             increaseQuality(item);
-        } else if (isABackstagePass(item)) {
+        } else if (toVO(item).isABackstagePass()) {
             increaseQuality(item);
             if (item.sellIn < 11) {
                 increaseQuality(item);
@@ -42,7 +42,7 @@ class GildedRose {
             if (isAgedBrie(item)) {
                 increaseQuality(item);
             } else {
-                if (isABackstagePass(item)) {
+                if (toVO(item).isABackstagePass()) {
                     item.quality = 0;
                 } else if (!toVO(item).isASulfuras()) {
                     decreaseQuality(item);
@@ -73,10 +73,6 @@ class GildedRose {
         if (item.quality < 50) {
             item.quality = item.quality + 1;
         }
-    }
-
-    private boolean isABackstagePass (final Item item) {
-        return item.name.equals("Backstage passes to a TAFKAL80ETC concert");
     }
 
     private com.gildedrose.domain.Item toVO (final Item item) {

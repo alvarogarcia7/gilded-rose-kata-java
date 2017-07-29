@@ -40,14 +40,18 @@ public class MainApplication {
         final ArrayList<Item> items = new ArrayList<>();
         while(scanner.hasNext()){
             final String line = scanner.nextLine();
-            final String[] parts = line.split(";");
-            final String name = parts[0];
-            final int sellIn = Integer.parseInt(parts[1]);
-            final int quality = Integer.parseInt(parts[2]);
-            Item item = new Item(name, sellIn, quality);
+            Item item = createItem(line);
             items.add(item);
         }
         return items.toArray(new Item[0]);
+    }
+
+    private static Item createItem (final String line) {
+        final String[] parts = line.split(";");
+        final String name = parts[0];
+        final int sellIn = Integer.parseInt(parts[1]);
+        final int quality = Integer.parseInt(parts[2]);
+        return new Item(name, sellIn, quality);
     }
 
 }

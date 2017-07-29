@@ -22,8 +22,7 @@ class GildedRose {
     }
 
     private Item updateQuality (final Item item) {
-        com.gildedrose.domain.Item valueObject = createItem(item);
-        return valueObject.updateQuality().toDTO();
+        return createItem(item).updateQuality().toDTO();
     }
 
     private com.gildedrose.domain.Item createItem (final Item item) {

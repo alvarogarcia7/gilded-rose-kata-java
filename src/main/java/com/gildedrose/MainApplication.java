@@ -39,9 +39,11 @@ public class MainApplication {
         final Scanner scanner = new Scanner(System.in);
         final ArrayList<Item> items = new ArrayList<>();
         final List<String> lines = new ArrayList<>();
-        while(scanner.hasNext()){
+        while(scanner.hasNext()) {
             final String line = scanner.nextLine();
             lines.add(line);
+        }
+        for (String line : lines) {
             items.add(createItem(line));
         }
         return toArray(items);

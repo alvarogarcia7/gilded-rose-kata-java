@@ -38,10 +38,12 @@ public class MainApplication {
     private static Item[] readItems () {
         final Scanner scanner = new Scanner(System.in);
         final ArrayList<Item> items = new ArrayList<>();
+        final List<String> lines = new ArrayList<>();
         while(scanner.hasNext()){
             final String line = scanner.nextLine();
+            lines.add(line);
             items.add(createItem(line));
-        }
+        }   
         return toArray(items);
     }
 

@@ -7,7 +7,7 @@ case "$1" in
         java -jar target/*.jar 10 < src/test/resources/golden-master/2.input > src/test/resources/golden-master/2.expected
         ;;
     play)
-        java -jar target/*.jar < src/test/resources/golden-master/2.input > src/test/resources/golden-master/2.actual
+        java -jar target/*.jar 10 < src/test/resources/golden-master/2.input > src/test/resources/golden-master/2.actual
         diff src/test/resources/golden-master/2.actual src/test/resources/golden-master/2.expected
         ;;
 esac

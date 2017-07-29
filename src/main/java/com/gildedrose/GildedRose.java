@@ -36,6 +36,11 @@ class GildedRose {
             if (item.sellIn < 6) {
                 increaseQuality(item);
             }
+            decreaseSellIn(item);
+            if (isExpired(item)) {
+                item.quality = 0;
+            }
+            return;
         } else if (!toVO(item).isASulfuras()) {
             decreaseQuality(item);
         }

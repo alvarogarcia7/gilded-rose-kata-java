@@ -14,4 +14,8 @@ public class Item {
     public boolean isAgedBrie () {
         return item.name.equals("Aged Brie");
     }
+
+    public boolean isASulfuras () {
+        return item.name.equals("Sulfuras, Hand of Ragnaros");
+    }
 }

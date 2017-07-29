@@ -4,6 +4,7 @@ import com.gildedrose.domain.Items;
 
 class GildedRose {
     private final Items itemsVO;
+    com.gildedrose.domain.Item itemVo;
     Item[] items;
 
     public GildedRose (Item[] items) {
@@ -29,11 +30,11 @@ class GildedRose {
             if (item.sellIn < 6) {
                 increaseQuality(item);
             }
-        } else if (!isASulfuras(item)) {
+        } else if (!toVO(item).isASulfuras()) {
             decreaseQuality(item);
         }
 
-        if (!isASulfuras(item)) {
+        if (!toVO(item).isASulfuras()) {
             decreaseSellIn(item);
         }
 
@@ -43,7 +44,7 @@ class GildedRose {
             } else {
                 if (isABackstagePass(item)) {
                     item.quality = 0;
-                } else if (!isASulfuras(item)) {
+                } else if (!toVO(item).isASulfuras()) {
                     decreaseQuality(item);
                 }
             }
@@ -72,10 +73,6 @@ class GildedRose {
         if (item.quality < 50) {
             item.quality = item.quality + 1;
         }
-    }
-
-    private boolean isASulfuras (final Item item) {
-        return item.name.equals("Sulfuras, Hand of Ragnaros");
     }
 
     private boolean isABackstagePass (final Item item) {

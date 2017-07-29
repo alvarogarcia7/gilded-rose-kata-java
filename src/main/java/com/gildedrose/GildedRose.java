@@ -39,18 +39,6 @@ class GildedRose {
         return valueObject;
     }
 
-    private Item decreaseQuality (final Item item) {
-        return toVO(item).decreaseQuality().toDTO();
-    }
-
-    private Item decreaseSellIn (final Item item) {
-        return toVO(item).decreaseSellIn().toDTO();
-    }
-
-    private Item increaseQuality (final Item item) {
-        return toVO(item).increaseQuality().toDTO();
-    }
-
     private com.gildedrose.domain.Item toVO (final Item item) {
         return com.gildedrose.domain.Item.from(item);
     }

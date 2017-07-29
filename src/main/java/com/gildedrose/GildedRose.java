@@ -28,7 +28,7 @@ class GildedRose {
                 decreaseSellIn(i);
             }
 
-            if (items[i].sellIn < 0) {
+            if (isExpired(items[i])) {
                 if (isAgedBrie(items[i])) {
                     increaseQuality(items[i]);
                 } else {
@@ -42,6 +42,10 @@ class GildedRose {
                 }
             }
         }
+    }
+
+    private boolean isExpired (final Item item) {
+        return item.sellIn < 0;
     }
 
     private void decreaseQuality (final Item item) {

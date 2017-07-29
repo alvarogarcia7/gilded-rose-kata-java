@@ -22,16 +22,17 @@ class GildedRose {
     }
 
     private Item updateQuality (final Item item) {
+        com.gildedrose.domain.Item valueObject = com.gildedrose.domain.Item.from(item);
         if (toVO(item).isAgedBrie()) {
-            return Brie.from(item).updateQuality().toDTO();
+            valueObject = Brie.from(item);
         }
         if (toVO(item).isABackstagePass()) {
-            return BackstagePass.from(item).updateQuality().toDTO();
+            valueObject = BackstagePass.from(item);
         }
         if (toVO(item).isASulfuras()) {
-            return Sulfuras.from(item).updateQuality().toDTO();
+            valueObject = Sulfuras.from(item);
         }
-        return com.gildedrose.domain.Item.from(item).updateQuality().toDTO();
+        return valueObject.updateQuality().toDTO();
     }
 
     private Item decreaseQuality (final Item item) {

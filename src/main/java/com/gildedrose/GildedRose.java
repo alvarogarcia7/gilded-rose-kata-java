@@ -35,8 +35,8 @@ class GildedRose {
                     if (isABackstagePass(items[i])) {
                         items[i].quality = 0;
                     } else {
-                        if (items[i].quality > 0) {
-                            if (!isASulfuras(items[i])) {
+                        if (!isASulfuras(items[i])) {
+                            if (items[i].quality > 0) {
                                 items[i].quality = items[i].quality - 1;
                             }
                         }

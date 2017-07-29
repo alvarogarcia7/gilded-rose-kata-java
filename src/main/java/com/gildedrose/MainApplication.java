@@ -40,8 +40,7 @@ public class MainApplication {
         final ArrayList<Item> items = new ArrayList<>();
         while(scanner.hasNext()){
             final String line = scanner.nextLine();
-            Item item = createItem(line);
-            items.add(item);
+            items.add(createItem(line));
         }
         return items.toArray(new Item[0]);
     }

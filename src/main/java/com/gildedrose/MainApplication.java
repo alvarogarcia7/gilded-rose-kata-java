@@ -42,6 +42,10 @@ public class MainApplication {
             final String line = scanner.nextLine();
             items.add(createItem(line));
         }
+        return toArray(items);
+    }
+
+    private static Item[] toArray (final ArrayList<Item> items) {
         return items.toArray(new Item[0]);
     }
 

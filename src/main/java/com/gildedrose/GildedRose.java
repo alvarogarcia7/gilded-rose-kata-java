@@ -9,9 +9,9 @@ class GildedRose {
 
     public void updateQuality () {
         for (int i = 0; i < items.length; i++) {
-            if (isAgedBrie(items[i])){
+            if (isAgedBrie(items[i])) {
                 increaseQuality(items[i]);
-            } else if(isABackstagePass(items[i])) {
+            } else if (isABackstagePass(items[i])) {
                 increaseQuality(items[i]);
                 if (items[i].sellIn < 11) {
                     increaseQuality(items[i]);

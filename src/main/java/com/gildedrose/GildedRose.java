@@ -22,7 +22,7 @@ class GildedRose {
         if (toVO(item).isAgedBrie()) {
             increaseQuality(item);
             decreaseSellIn(item);
-            if (isExpired(item)) {
+            if (toVO(item).isExpired()) {
                 increaseQuality(item);
             }
             return;
@@ -37,7 +37,7 @@ class GildedRose {
                 increaseQuality(item);
             }
             decreaseSellIn(item);
-            if (isExpired(item)) {
+            if (toVO(item).isExpired()) {
                 item.quality = 0;
             }
             return;
@@ -47,13 +47,9 @@ class GildedRose {
         }
         decreaseQuality(item);
         decreaseSellIn(item);
-        if (isExpired(item)) {
+        if (toVO(item).isExpired()) {
             decreaseQuality(item);
         }
-    }
-
-    private boolean isExpired (final Item item) {
-        return toVO(item).isExpired();
     }
 
     private void decreaseQuality (final Item item) {

@@ -1,8 +1,17 @@
 package com.gildedrose.domain;
 
-import com.gildedrose.Item;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Items {
-    public Items (final Item[] items) {
+
+    private final List<Item> values;
+
+    public Items (final com.gildedrose.Item... dtos) {
+        values = new ArrayList<>();
+        for (final com.gildedrose.Item dto : dtos) {
+            Item valueObject = Item.from(dto);
+            values.add(valueObject);
+        }
     }
 }

@@ -61,7 +61,7 @@ class GildedRose {
     }
 
     private boolean isAgedBrie (final Item item) {
-        return com.gildedrose.domain.Item.from(item).isAgedBrie();
+        return toVO(item).isAgedBrie();
     }
 
     private void decreaseSellIn (final Item item) {
@@ -80,6 +80,10 @@ class GildedRose {
 
     private boolean isABackstagePass (final Item item) {
         return item.name.equals("Backstage passes to a TAFKAL80ETC concert");
+    }
+
+    private com.gildedrose.domain.Item toVO (final Item item) {
+        return com.gildedrose.domain.Item.from(item);
     }
 
 }

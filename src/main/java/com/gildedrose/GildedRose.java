@@ -11,9 +11,7 @@ class GildedRose {
         for (int i = 0; i < items.length; i++) {
             if (!isAgedBrie(items[i]) && !isABackstagePass(items[i])) {
                 if (!isASulfuras(items[i])) {
-                    if (items[i].quality > 0) {
-                        items[i].quality = items[i].quality - 1;
-                    }
+                    decreaseQuality(items[i]);
                 }
             } else {
                 increaseQuality(items[i]);
@@ -47,6 +45,12 @@ class GildedRose {
                     increaseQuality(items[i]);
                 }
             }
+        }
+    }
+
+    private void decreaseQuality (final Item item) {
+        if (item.quality > 0) {
+            item.quality = item.quality - 1;
         }
     }
 

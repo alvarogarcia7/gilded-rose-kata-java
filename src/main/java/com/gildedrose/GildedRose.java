@@ -47,7 +47,6 @@ class GildedRose {
 
         if (isExpired(item)) {
             if (toVO(item).isAgedBrie()) {
-                increaseQuality(item);
             } else if (toVO(item).isABackstagePass()) {
                 item.quality = 0;
             } else if (!toVO(item).isASulfuras()) {

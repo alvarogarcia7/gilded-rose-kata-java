@@ -19,7 +19,6 @@ class GildedRose {
     }
 
     private void updateQuality (final Item item) {
-
         if (toVO(item).isAgedBrie()) {
             increaseQuality(item);
             decreaseSellIn(item);

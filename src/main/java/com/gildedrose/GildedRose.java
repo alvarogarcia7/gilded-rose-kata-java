@@ -30,7 +30,7 @@ class GildedRose {
         }
 
         if (!isASulfuras(items[i])) {
-            decreaseSellIn(i);
+            decreaseSellIn(items[i]);
         }
 
         if (isExpired(items[i])) {
@@ -60,8 +60,8 @@ class GildedRose {
         return item.name.equals("Aged Brie");
     }
 
-    private void decreaseSellIn (final int i) {
-        items[i].sellIn = items[i].sellIn - 1;
+    private void decreaseSellIn (final Item item) {
+        item.sellIn = item.sellIn - 1;
     }
 
     private void increaseQuality (final Item item) {

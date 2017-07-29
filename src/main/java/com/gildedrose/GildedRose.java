@@ -61,7 +61,7 @@ class GildedRose {
     }
 
     private boolean isAgedBrie (final Item item) {
-        return item.name.equals("Aged Brie");
+        return com.gildedrose.domain.Item.from(item).isAgedBrie();
     }
 
     private void decreaseSellIn (final Item item) {

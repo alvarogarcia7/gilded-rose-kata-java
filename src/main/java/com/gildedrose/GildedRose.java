@@ -29,7 +29,9 @@ class GildedRose {
             }
 
             if (items[i].sellIn < 0) {
-                if (!isAgedBrie(items[i])) {
+                if (isAgedBrie(items[i])) {
+                    increaseQuality(items[i]);
+                } else {
                     if (!isABackstagePass(items[i])) {
                         if (items[i].quality > 0) {
                             if (!isASulfuras(items[i])) {
@@ -39,8 +41,6 @@ class GildedRose {
                     } else {
                         items[i].quality = 0;
                     }
-                } else {
-                    increaseQuality(items[i]);
                 }
             }
         }

@@ -9,12 +9,11 @@ clean:
 
 .PHONY: register-golden-master
 register-golden-master: clean build
-	java -jar target/*.jar < src/test/resources/golden-master/1.input > src/test/resources/golden-master/1.expected
+	./src/test/golden-master/all.sh record
 
 .PHONY: test
 test: clean build
-	java -jar target/*.jar < src/test/resources/golden-master/1.input > src/test/resources/golden-master/1.actual
-	diff src/test/resources/golden-master/1.actual src/test/resources/golden-master/1.expected
+	./src/test/golden-master/all.sh play
 	echo "GOLDEN MASTER TESTS ARE OK"
 
 

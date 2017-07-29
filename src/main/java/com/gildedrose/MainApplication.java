@@ -35,7 +35,7 @@ public class MainApplication {
         return defaultValue;
     }
 
-    private static Item[] readItems () {
+    private Item[] readItems () {
         final Scanner scanner = new Scanner(System.in);
         final ArrayList<Item> items = new ArrayList<>();
         final List<String> lines = new ArrayList<>();
@@ -43,7 +43,7 @@ public class MainApplication {
             final String line = scanner.nextLine();
             lines.add(line);
             items.add(createItem(line));
-        }   
+        }
         return toArray(items);
     }
 

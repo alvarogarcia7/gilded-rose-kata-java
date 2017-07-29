@@ -2,13 +2,24 @@ package com.gildedrose;
 
 import com.gildedrose.domain.BackstagePass;
 import com.gildedrose.domain.Brie;
+import com.gildedrose.domain.Factory;
 import com.gildedrose.domain.Sulfuras;
 
 class GildedRose {
     Item[] items;
+    private Factory objectFactory;
 
     public GildedRose (Item[] items) {
         this.items = items;
+        setObjectFactory();
+    }
+
+    private void setObjectFactory () {
+        this.objectFactory = new Factory(
+                Brie.factory(),
+                BackstagePass.factory(),
+                Sulfuras.factory(),
+                com.gildedrose.domain.Item.factory());
     }
 
     public void updateQuality () {
@@ -22,21 +33,6 @@ class GildedRose {
     }
 
     private com.gildedrose.domain.Item createItem (final Item item) {
-        com.gildedrose.domain.Item valueObject = com.gildedrose.domain.Item.from(item);
-        if (toVO(item).isAgedBrie()) {
-            valueObject = Brie.from(item);
-        }
-        if (toVO(item).isABackstagePass()) {
-            valueObject = BackstagePass.from(item);
-        }
-        if (toVO(item).isASulfuras()) {
-            valueObject = Sulfuras.from(item);
-        }
-        return valueObject;
+        return objectFactory.build(item);
     }
-
-    private com.gildedrose.domain.Item toVO (final Item item) {
-        return com.gildedrose.domain.Item.from(item);
-    }
-
 }

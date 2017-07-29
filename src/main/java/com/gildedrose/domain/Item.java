@@ -1,5 +1,9 @@
 package com.gildedrose.domain;
 
+import io.vavr.control.Option;
+
+import java.util.function.Function;
+
 public class Item {
     protected com.gildedrose.Item item;
 
@@ -57,5 +61,9 @@ public class Item {
             decreaseQuality();
         }
         return this;
+    }
+
+    public static Function<Item, Option<Item>> factory(){
+        return (item) -> Option.none();
     }
 }

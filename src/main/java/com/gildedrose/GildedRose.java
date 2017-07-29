@@ -32,7 +32,7 @@ class GildedRose {
             }
 
             if (!isASulfuras(items[i])) {
-                decreaseQuality(i);
+                decreaseSellIn(i);
             }
 
             if (items[i].sellIn < 0) {
@@ -57,7 +57,7 @@ class GildedRose {
         return item.name.equals("Aged Brie");
     }
 
-    private void decreaseQuality (final int i) {
+    private void decreaseSellIn (final int i) {
         items[i].sellIn = items[i].sellIn - 1;
     }
 

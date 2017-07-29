@@ -1,5 +1,6 @@
 package com.gildedrose;
 
+import com.gildedrose.domain.Brie;
 import com.gildedrose.domain.Items;
 
 class GildedRose {
@@ -49,13 +50,7 @@ class GildedRose {
     }
 
     private Item updateQualityToAgedBrie (final Item item) {
-        final com.gildedrose.domain.Item vo = toVO(item);
-        vo.increaseQuality();
-        vo.decreaseSellIn();
-        if (vo.isExpired()) {
-            vo.increaseQuality();
-        }
-        return vo.toDTO();
+        return Brie.from(item).updateQuality().toDTO();
     }
 
     private Item decreaseQuality (final Item item) {

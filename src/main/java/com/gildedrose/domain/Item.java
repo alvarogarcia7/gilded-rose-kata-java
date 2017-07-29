@@ -3,7 +3,7 @@ package com.gildedrose.domain;
 public class Item {
     private com.gildedrose.Item item;
 
-    private Item (final com.gildedrose.Item item) {
+    protected Item (final com.gildedrose.Item item) {
         this.item = item;
     }
 
@@ -47,6 +47,10 @@ public class Item {
         if (item.quality > 0) {
             item.quality = item.quality - 1;
         }
+        return this;
+    }
+
+    public Item updateQuality () {
         return this;
     }
 }

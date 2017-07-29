@@ -1,5 +1,7 @@
 package com.gildedrose;
 
+import com.gildedrose.domain.Items;
+
 class GildedRose {
     private final Items itemsVO;
     Item[] items;

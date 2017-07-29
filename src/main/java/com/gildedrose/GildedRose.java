@@ -3,11 +3,11 @@ package com.gildedrose;
 class GildedRose {
     Item[] items;
 
-    public GildedRose(Item[] items) {
+    public GildedRose (Item[] items) {
         this.items = items;
     }
 
-    public void updateQuality() {
+    public void updateQuality () {
         for (int i = 0; i < items.length; i++) {
             if (!isAgedBrie(items[i]) && !isABackstagePass(items[i])) {
                 if (items[i].quality > 0) {
@@ -17,16 +17,13 @@ class GildedRose {
                 }
             } else {
                 increaseQuality(items[i]);
-                if (items[i].quality < 50) {
+                if (isABackstagePass(items[i])) {
+                    if (items[i].sellIn < 11) {
+                        increaseQuality(items[i]);
+                    }
 
-                    if (isABackstagePass(items[i])) {
-                        if (items[i].sellIn < 11) {
-                            increaseQuality(items[i]);
-                        }
-
-                        if (items[i].sellIn < 6) {
-                            increaseQuality(items[i]);
-                        }
+                    if (items[i].sellIn < 6) {
+                        increaseQuality(items[i]);
                     }
                 }
             }

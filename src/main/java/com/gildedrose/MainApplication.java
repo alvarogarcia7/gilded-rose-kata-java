@@ -10,12 +10,16 @@ public class MainApplication {
         Item[] items = readItems();
 
 
-        int days = 2;
-        if (args.length > 0) {
-            days = Integer.parseInt(args[0]) + 1;
-        }
+        int days = readDays(args, 2);
 
         updateQuality(items, days);
+    }
+
+    private static int readDays (final String[] args, int defaultValue) {
+        if (args.length > 0) {
+            return Integer.parseInt(args[0]) + 1;
+        }
+        return defaultValue;
     }
 
     private static Item[] readItems () {

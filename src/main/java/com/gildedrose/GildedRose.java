@@ -17,7 +17,7 @@ class GildedRose {
                 }
             } else {
                 if (items[i].quality < 50) {
-                    items[i].quality = items[i].quality + 1;
+                    increaseQuality(items[i]);
 
                     if (isABackstagePass(items[i])) {
                         if (items[i].sellIn < 11) {

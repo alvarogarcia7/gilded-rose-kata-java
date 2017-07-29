@@ -25,6 +25,10 @@ public class MainApplication {
             days = Integer.parseInt(args[0]) + 1;
         }
 
+        updateQuality(items, days);
+    }
+
+    private static void updateQuality (final Item[] items, final int days) {
         GildedRose app = new GildedRose(items);
         for (int i = 0; i < days; i++) {
             System.out.println("-------- day " + i + " --------");

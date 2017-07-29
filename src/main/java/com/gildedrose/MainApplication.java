@@ -2,6 +2,10 @@ package com.gildedrose;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 @SpringBootApplication
 public class MainApplication {
 
@@ -32,17 +36,17 @@ public class MainApplication {
     }
 
     private static Item[] readItems () {
-        return new Item[]{
-                new Item("+5 Dexterity Vest", 10, 20), //
-                new Item("Aged Brie", 2, 0), //
-                new Item("Elixir of the Mongoose", 5, 7), //
-                new Item("Sulfuras, Hand of Ragnaros", 0, 80), //
-                new Item("Sulfuras, Hand of Ragnaros", -1, 80),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),
-                // this conjured item does not work properly yet
-                new Item("Conjured Mana Cake", 3, 6)};
+        final Scanner scanner = new Scanner(System.in);
+        final ArrayList<Item> items = new ArrayList<>();
+        while(scanner.hasNext()){
+            final String line = scanner.nextLine();
+            final String[] parts = line.split(";");
+            final String name = parts[0];
+            final int sellIn = Integer.parseInt(parts[1]);
+            final int quality = Integer.parseInt(parts[2]);
+            items.add(new Item(name, sellIn, quality));
+        }
+        return items.toArray(new Item[0]);
     }
 
 }

@@ -42,12 +42,13 @@ class GildedRose {
             }
             return;
         }
-        if (!toVO(item).isASulfuras()) {
+        if (toVO(item).isASulfuras()) {
+            return;
+        }
+        decreaseQuality(item);
+        decreaseSellIn(item);
+        if (isExpired(item)) {
             decreaseQuality(item);
-            decreaseSellIn(item);
-            if (isExpired(item)) {
-                decreaseQuality(item);
-            }
         }
     }
 

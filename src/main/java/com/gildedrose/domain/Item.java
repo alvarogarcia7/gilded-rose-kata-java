@@ -54,4 +54,27 @@ public class Item {
     public static Function<com.gildedrose.Item, Option<Item>> factory(){
         return (item1 -> Option.of(Item.from(item1)));
     }
+
+    @Override
+    public boolean equals (final Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        final Item item1 = (Item) o;
+
+        return item != null ? item.equals(item1.item) : item1.item == null;
+    }
+
+    @Override
+    public int hashCode () {
+        return item != null ? item.hashCode() : 0;
+    }
+
+    @Override
+    public String toString () {
+        final StringBuffer sb = new StringBuffer("Item{");
+        sb.append("item=").append(item);
+        sb.append('}');
+        return sb.toString();
+    }
 }

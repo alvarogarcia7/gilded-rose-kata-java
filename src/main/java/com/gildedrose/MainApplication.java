@@ -4,15 +4,24 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class MainApplication {
+
+    private GildedRoseApplication gildedRoseApplication;
+
+    public MainApplication () {
+        gildedRoseApplication = new GildedRoseApplication();
+    }
+
     public static void main(String[] args) {
+        new MainApplication().run(args);
+    }
+
+    private void run (final String[] args) {
         System.out.println("OMGHAI!");
 
         Item[] items = readItems();
-
-
         int days = readDays(args, 2);
 
-        updateQuality(items, days);
+        gildedRoseApplication.updateQuality(items, days);
     }
 
     private static int readDays (final String[] args, int defaultValue) {
@@ -34,19 +43,6 @@ public class MainApplication {
                     new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),
                     // this conjured item does not work properly yet
                     new Item("Conjured Mana Cake", 3, 6) };
-    }
-
-    private static void updateQuality (final Item[] items, final int days) {
-        GildedRose app = new GildedRose(items);
-        for (int i = 0; i < days; i++) {
-            System.out.println("-------- day " + i + " --------");
-            System.out.println("name, sellIn, quality");
-            for (Item item : items) {
-                System.out.println(item);
-            }
-            System.out.println();
-            app.updateQuality();
-        }
     }
 
 }

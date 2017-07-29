@@ -40,4 +40,11 @@ public class Item {
     public com.gildedrose.Item toDTO () {
         return item;
     }
+
+    public Item decreaseQuality () {
+        if (item.quality > 0) {
+            item.quality = item.quality - 1;
+        }
+        return this;
+    }
 }

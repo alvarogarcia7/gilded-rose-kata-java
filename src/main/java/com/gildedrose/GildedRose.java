@@ -58,10 +58,8 @@ class GildedRose {
         return vo.toDTO();
     }
 
-    private void decreaseQuality (final Item item) {
-        if (item.quality > 0) {
-            item.quality = item.quality - 1;
-        }
+    private Item decreaseQuality (final Item item) {
+        return toVO(item).decreaseQuality().toDTO();
     }
 
     private void decreaseSellIn (final Item item) {

@@ -41,7 +41,8 @@ class GildedRose {
                 item.quality = 0;
             }
             return;
-        } else if (!toVO(item).isASulfuras()) {
+        }
+        if (!toVO(item).isASulfuras()) {
             decreaseQuality(item);
         }
 

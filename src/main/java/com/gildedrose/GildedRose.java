@@ -1,5 +1,6 @@
 package com.gildedrose;
 
+import com.gildedrose.domain.BackstagePass;
 import com.gildedrose.domain.Brie;
 import com.gildedrose.domain.Items;
 
@@ -24,19 +25,7 @@ class GildedRose {
             return updateQualityToAgedBrie(item);
         }
         if (toVO(item).isABackstagePass()) {
-            increaseQuality(item);
-            if (item.sellIn < 11) {
-                increaseQuality(item);
-            }
-
-            if (item.sellIn < 6) {
-                increaseQuality(item);
-            }
-            decreaseSellIn(item);
-            if (toVO(item).isExpired()) {
-                item.quality = 0;
-            }
-            return item;
+            return BackstagePass.from(item).updateQuality().toDTO();
         }
         if (toVO(item).isASulfuras()) {
             return item;

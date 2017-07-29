@@ -1,7 +1,7 @@
 package com.gildedrose.domain;
 
 public class Item {
-    private com.gildedrose.Item item;
+    protected com.gildedrose.Item item;
 
     protected Item (final com.gildedrose.Item item) {
         this.item = item;

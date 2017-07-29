@@ -25,7 +25,7 @@ public class Brie extends Item {
 
     public static Function<com.gildedrose.Item, Option<Item>> factory () {
         return (item) -> {
-            if (Item.from(item).isAgedBrie()) {
+            if (item.name.equals("Aged Brie")) {
                 return Option.of(Brie.from(item));
             }
             return Option.none();

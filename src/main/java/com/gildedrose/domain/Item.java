@@ -15,18 +15,6 @@ public class Item {
         return new Item(item);
     }
 
-    public boolean isAgedBrie () {
-        return item.name.equals("Aged Brie");
-    }
-
-    public boolean isASulfuras () {
-        return item.name.equals("Sulfuras, Hand of Ragnaros");
-    }
-
-    public boolean isABackstagePass () {
-        return item.name.equals("Backstage passes to a TAFKAL80ETC concert");
-    }
-
     public boolean isExpired () {
         return item.sellIn < 0;
     }

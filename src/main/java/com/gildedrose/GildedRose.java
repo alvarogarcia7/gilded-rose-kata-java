@@ -14,18 +14,18 @@ class GildedRose {
 
     public void updateQuality () {
         for (int i = 0; i < items.length; i++) {
-            updateQuality(items[i]);
+            items[i] = updateQuality(items[i]);
         }
     }
 
-    private void updateQuality (final Item item) {
+    private Item updateQuality (final Item item) {
         if (toVO(item).isAgedBrie()) {
             increaseQuality(item);
             decreaseSellIn(item);
             if (toVO(item).isExpired()) {
                 increaseQuality(item);
             }
-            return;
+            return item;
         }
         if (toVO(item).isABackstagePass()) {
             increaseQuality(item);
@@ -40,16 +40,17 @@ class GildedRose {
             if (toVO(item).isExpired()) {
                 item.quality = 0;
             }
-            return;
+            return item;
         }
         if (toVO(item).isASulfuras()) {
-            return;
+            return item;
         }
         decreaseQuality(item);
         decreaseSellIn(item);
         if (toVO(item).isExpired()) {
             decreaseQuality(item);
         }
+        return item;
     }
 
     private void decreaseQuality (final Item item) {

@@ -53,7 +53,7 @@ class GildedRose {
     }
 
     private boolean isExpired (final Item item) {
-        return item.sellIn < 0;
+        return toVO(item).isExpired();
     }
 
     private void decreaseQuality (final Item item) {

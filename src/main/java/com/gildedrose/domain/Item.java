@@ -22,4 +22,8 @@ public class Item {
     public boolean isABackstagePass () {
         return item.name.equals("Backstage passes to a TAFKAL80ETC concert");
     }
+
+    public boolean isExpired () {
+        return item.sellIn < 0;
+    }
 }

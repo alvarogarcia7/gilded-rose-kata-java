@@ -20,8 +20,7 @@ class GildedRose {
 
     private Item updateQuality (final Item item) {
         if (toVO(item).isAgedBrie()) {
-            updateQualityToAgedBrie(item);
-            return item;
+            return updateQualityToAgedBrie(item);
         }
         if (toVO(item).isABackstagePass()) {
             increaseQuality(item);
@@ -49,12 +48,14 @@ class GildedRose {
         return item;
     }
 
-    private void updateQualityToAgedBrie (final Item item) {
-        increaseQuality(item);
-        decreaseSellIn(item);
-        if (toVO(item).isExpired()) {
-            increaseQuality(item);
+    private Item updateQualityToAgedBrie (final Item item) {
+        final com.gildedrose.domain.Item vo = toVO(item);
+        vo.increaseQuality();
+        vo.decreaseSellIn();
+        if (vo.isExpired()) {
+            vo.increaseQuality();
         }
+        return vo.toDTO();
     }
 
     private void decreaseQuality (final Item item) {

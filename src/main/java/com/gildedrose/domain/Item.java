@@ -26,4 +26,18 @@ public class Item {
     public boolean isExpired () {
         return item.sellIn < 0;
     }
+
+    public void decreaseSellIn () {
+        item.sellIn = item.sellIn - 1;
+    }
+
+    public void increaseQuality () {
+        if (item.quality < 50) {
+            item.quality = item.quality + 1;
+        }
+    }
+
+    public com.gildedrose.Item toDTO () {
+        return item;
+    }
 }

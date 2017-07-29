@@ -6,13 +6,10 @@ import com.gildedrose.domain.Items;
 import com.gildedrose.domain.Sulfuras;
 
 class GildedRose {
-    private final Items itemsVO;
-    com.gildedrose.domain.Item itemVo;
     Item[] items;
 
     public GildedRose (Item[] items) {
         this.items = items;
-        this.itemsVO = new Items(items);
     }
 
     public void updateQuality () {

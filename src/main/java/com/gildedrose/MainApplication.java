@@ -47,11 +47,11 @@ public class MainApplication {
         return toArray(items);
     }
 
-    private static Item[] toArray (final ArrayList<Item> items) {
+    private Item[] toArray (final ArrayList<Item> items) {
         return items.toArray(new Item[0]);
     }
 
-    private static Item createItem (final String line) {
+    private Item createItem (final String line) {
         final String[] parts = line.split(";");
         final String name = parts[0];
         final int sellIn = Integer.parseInt(parts[1]);

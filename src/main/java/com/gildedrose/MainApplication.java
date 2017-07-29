@@ -44,7 +44,8 @@ public class MainApplication {
             final String name = parts[0];
             final int sellIn = Integer.parseInt(parts[1]);
             final int quality = Integer.parseInt(parts[2]);
-            items.add(new Item(name, sellIn, quality));
+            Item item = new Item(name, sellIn, quality);
+            items.add(item);
         }
         return items.toArray(new Item[0]);
     }

@@ -51,6 +51,11 @@ public class Item {
     }
 
     public Item updateQuality () {
+        decreaseQuality();
+        decreaseSellIn();
+        if (isExpired()) {
+            decreaseQuality();
+        }
         return this;
     }
 }

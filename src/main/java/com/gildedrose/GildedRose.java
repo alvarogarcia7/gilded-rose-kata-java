@@ -31,12 +31,7 @@ class GildedRose {
         if (toVO(item).isASulfuras()) {
             return Sulfuras.from(item).updateQuality().toDTO();
         }
-        decreaseQuality(item);
-        decreaseSellIn(item);
-        if (toVO(item).isExpired()) {
-            decreaseQuality(item);
-        }
-        return item;
+        return com.gildedrose.domain.Item.from(item).updateQuality().toDTO();
     }
 
     private Item decreaseQuality (final Item item) {

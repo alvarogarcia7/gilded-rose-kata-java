@@ -13,7 +13,7 @@ This is the process used to reach the current state:
 
 ### Protecting the Item
 
-As the Item class cannot be modified, I've created a wrapper to push the behavior to the new class.
+As the `Item` class cannot be modified, I've created a wrapper to push the behavior to the new class.
 
 ### Separating the rules
 

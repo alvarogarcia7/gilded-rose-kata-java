@@ -18,6 +18,8 @@ In the current solution, the behavior related to updating quality lives in the `
 
 This can be seen as a `Rule` and a `Rule Engine` pattern: the `domain.Item` (plus children) are the `Rule`s and the `Factory::build` is the `Rule Engine`
 
+Each rule is autonomous on how to apply itself. The rule itself indicates whether there is a match or not (using an Option).
+
 [gildedrose]: https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/master/Java
 [emilybache]: https://github.com/emilybache
 

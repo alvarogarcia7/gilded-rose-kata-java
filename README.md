@@ -12,6 +12,11 @@ Practicing [Emily Bache][emilybache]'s [Gilded Rose][gildedrose] kata
 
 As the Item class cannot be modified, I've created a wrapper to push the behavior to the new class.
 
+### Separating the rules
+
+In the current solution, the behavior related to updating quality lives in the domain.Item class and its children.
+
+
 [gildedrose]: https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/master/Java
 [emilybache]: https://github.com/emilybache
 

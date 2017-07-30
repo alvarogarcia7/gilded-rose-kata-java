@@ -2,6 +2,7 @@ package com.gildedrose;
 
 import com.gildedrose.domain.BackstagePass;
 import com.gildedrose.domain.Brie;
+import com.gildedrose.domain.ConjuredItem;
 import com.gildedrose.domain.Factory;
 import com.gildedrose.domain.Sulfuras;
 
@@ -19,6 +20,7 @@ class GildedRose {
                 Brie.factory(),
                 BackstagePass.factory(),
                 Sulfuras.factory(),
+                ConjuredItem.factory(),
                 com.gildedrose.domain.Item.factory());
     }
 

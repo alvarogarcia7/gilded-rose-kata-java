@@ -23,6 +23,12 @@ This can be seen as a `Rule` and a `Rule Engine` pattern: the `domain.Item` (plu
 
 Each rule is autonomous on how to apply itself. The rule itself indicates whether there is a match or not (using an `Option`). The rule engine just iterates through them until a match is found. Therefore, the order of the rules matters
 
+### Using factories
+
+Using factories (or named constructors) instead of normal constructors has been a great success. 
+
+By contract, the constructor MUST return an instance of the class, but a named constructor MUST return an instance of the class or any children (covariant)
+
 ### Project as a legacy codebase
 
 I've decided to handle this refactoring kata as a legacy codebase and do not add unit tests for the existing behavior. 

@@ -7,7 +7,7 @@ Practicing [Emily Bache][emilybache]'s [Gilded Rose][gildedrose] kata
 This is the process used to reach the current state:
 
   * I've created a golden master testing strategy for the existing features
-  * Break the dependencies to GildedRose, pushing behavior down to the newly-created objects
+  * Break the dependencies to `GildedRose`, pushing behavior down to the newly-created objects
   * Follow TDD to add the new feature (`Conjured Item` support)
   * Do not add more unit test coverage, as there is no request for further user stories/business features*
 

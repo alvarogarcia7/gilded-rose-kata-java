@@ -8,6 +8,10 @@ Practicing [Emily Bache][emilybache]'s [Gilded Rose][gildedrose] kata
   * Follow TDD to add the new feature (`Conjured Item` support)
   * Do not add more unit test coverage, as there is no request for further user stories/business features*
 
+### Protecting the Item
+
+As the Item class cannot be modified, I've created a wrapper to push the behavior to the new class.
+
 [gildedrose]: https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/master/Java
 [emilybache]: https://github.com/emilybache
 

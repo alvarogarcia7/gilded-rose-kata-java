@@ -20,6 +20,10 @@ This can be seen as a `Rule` and a `Rule Engine` pattern: the `domain.Item` (plu
 
 Each rule is autonomous on how to apply itself. The rule itself indicates whether there is a match or not (using an `Option`). The rule engine just iterates through them until a match is found. Therefore, the order of the rules matters
 
+### Project as a legacy codebase
+
+I've decided to handle this refactoring kata as a legacy codebase and do not add unit tests for the existing behavior.
+
 [gildedrose]: https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/master/Java
 [emilybache]: https://github.com/emilybache
 

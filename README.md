@@ -14,9 +14,9 @@ As the Item class cannot be modified, I've created a wrapper to push the behavio
 
 ### Separating the rules
 
-In the current solution, the behavior related to updating quality lives in the domain.Item class and its children.
+In the current solution, the behavior related to updating quality lives in the `domain.Item` class and its children.
 
-This can be seen as a Rule and a Rule Engine pattern: the domain.Item (plus children) are the Rule and the Factory::build is the Rule Engine
+This can be seen as a `Rule` and a `Rule Engine` pattern: the `domain.Item` (plus children) are the `Rule`s and the `Factory::build` is the `Rule Engine`
 
 [gildedrose]: https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/master/Java
 [emilybache]: https://github.com/emilybache

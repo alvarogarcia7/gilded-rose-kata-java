@@ -4,15 +4,15 @@ import com.gildedrose.domain.Factory;
 
 class GildedRose {
     Item[] items;
-    private Factory objectFactory;
+    private Factory factory;
 
     public GildedRose (Item[] items) {
         this.items = items;
-        setObjectFactory(Factory.standardSetOfItems());
+        setFactory(Factory.standardSetOfItems());
     }
 
-    private void setObjectFactory (final Factory factory) {
-        this.objectFactory = factory;
+    private void setFactory (final Factory factory) {
+        this.factory = factory;
     }
 
     public void updateQuality () {
@@ -26,6 +26,6 @@ class GildedRose {
     }
 
     private com.gildedrose.domain.Item createItem (final Item item) {
-        return objectFactory.build(item);
+        return factory.build(item);
     }
 }

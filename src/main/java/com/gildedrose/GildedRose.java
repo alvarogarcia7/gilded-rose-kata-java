@@ -16,7 +16,11 @@ class GildedRose {
     }
 
     private void setObjectFactory () {
-        this.objectFactory = new Factory(
+        this.objectFactory = standardSetOfItems();
+    }
+
+    private Factory standardSetOfItems () {
+        return new Factory(
                 Brie.factory(),
                 BackstagePass.factory(),
                 Sulfuras.factory(),

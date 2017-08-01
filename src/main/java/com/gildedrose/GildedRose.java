@@ -8,11 +8,11 @@ class GildedRose {
 
     public GildedRose (Item[] items) {
         this.items = items;
-        setObjectFactory();
+        setObjectFactory(Factory.standardSetOfItems());
     }
 
-    private void setObjectFactory () {
-        this.objectFactory = Factory.standardSetOfItems();
+    private void setObjectFactory (final Factory factory) {
+        this.objectFactory = factory;
     }
 
     public void updateQuality () {

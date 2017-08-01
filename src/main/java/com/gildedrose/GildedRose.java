@@ -1,18 +1,18 @@
 package com.gildedrose;
 
-import com.gildedrose.domain.Factory;
+import com.gildedrose.domain.ItemProductionCenter;
 
 class GildedRose {
     Item[] items;
-    private Factory factory;
+    private ItemProductionCenter itemProductionCenter;
 
     public GildedRose (Item[] items) {
         this.items = items;
-        setFactory(Factory.standardSetOfItems());
+        setItemProductionCenter(ItemProductionCenter.standardSetOfItems());
     }
 
-    public void setFactory (final Factory factory) {
-        this.factory = factory;
+    public void setItemProductionCenter (final ItemProductionCenter itemProductionCenter) {
+        this.itemProductionCenter = itemProductionCenter;
     }
 
     public void updateQuality () {
@@ -26,6 +26,6 @@ class GildedRose {
     }
 
     private com.gildedrose.domain.Item createItem (final Item item) {
-        return factory.build(item);
+        return itemProductionCenter.build(item);
     }
 }

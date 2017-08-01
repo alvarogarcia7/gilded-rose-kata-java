@@ -4,10 +4,10 @@ import io.vavr.control.Option;
 
 import java.util.function.Function;
 
-public class Factory {
+public class ItemProductionCenter {
     private final Function<com.gildedrose.Item, Option<Item>>[] factories;
 
-    public Factory (final Function<com.gildedrose.Item, Option<Item>>... factories) {
+    public ItemProductionCenter (final Function<com.gildedrose.Item, Option<Item>>... factories) {
         this.factories = factories;
     }
 
@@ -21,8 +21,8 @@ public class Factory {
         throw new RuntimeException("This item does not match any of the previous rules");
     }
 
-    public static Factory standardSetOfItems () {
-        return new Factory(
+    public static ItemProductionCenter standardSetOfItems () {
+        return new ItemProductionCenter(
                 Brie.architect(),
                 BackstagePass.architect(),
                 Sulfuras.architect(),

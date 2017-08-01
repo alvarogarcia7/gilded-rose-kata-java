@@ -39,6 +39,9 @@ For the new behavior, on the other hand, it's now easy to create unit tests, fol
 
 The `ItemProductionCenter` is where `Item`s are produced
 
+### The role of the `Architect`
+
+I've tried to find abstractions for those who decide when to build: `Architect`. They decide when a `Builder` pattern should be used
 
 
 [gildedrose]: https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/master/Java

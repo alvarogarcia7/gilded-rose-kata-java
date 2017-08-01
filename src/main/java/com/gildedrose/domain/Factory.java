@@ -23,10 +23,10 @@ public class Factory {
 
     public static Factory standardSetOfItems () {
         return new Factory(
-                Brie.factory(),
-                BackstagePass.factory(),
-                Sulfuras.factory(),
-                ConjuredItem.factory(),
-                Item.factory());
+                Brie.architect(),
+                BackstagePass.architect(),
+                Sulfuras.architect(),
+                ConjuredItem.architect(),
+                Item.architect());
     }
 }

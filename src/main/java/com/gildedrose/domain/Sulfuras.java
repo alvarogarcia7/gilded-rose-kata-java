@@ -19,7 +19,7 @@ public class Sulfuras extends Item {
         return this;
     }
 
-    public static Function<com.gildedrose.Item, Option<Item>> factory () {
+    public static Function<com.gildedrose.Item, Option<Item>> architect () {
         return (item) -> {
             if (item.name.equals("Sulfuras, Hand of Ragnaros")) {
                 return Option.of(Sulfuras.from(item));

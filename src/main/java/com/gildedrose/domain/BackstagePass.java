@@ -30,7 +30,7 @@ public class BackstagePass extends com.gildedrose.domain.Item {
         return this;
     }
 
-    public static Function<com.gildedrose.Item, Option<Item>> factory () {
+    public static Function<com.gildedrose.Item, Option<Item>> architect () {
         return (item) -> {
             if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                 return Option.of(BackstagePass.from(item));

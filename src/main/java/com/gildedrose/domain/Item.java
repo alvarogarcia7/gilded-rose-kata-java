@@ -51,7 +51,7 @@ public class Item {
         return this;
     }
 
-    public static Function<com.gildedrose.Item, Option<Item>> factory(){
+    public static Function<com.gildedrose.Item, Option<Item>> architect (){
         return (item1 -> Option.of(Item.from(item1)));
     }
 

@@ -23,7 +23,7 @@ public class Brie extends Item {
         return this;
     }
 
-    public static Function<com.gildedrose.Item, Option<Item>> factory () {
+    public static Function<com.gildedrose.Item, Option<Item>> architect () {
         return (item) -> {
             if (item.name.equals("Aged Brie")) {
                 return Option.of(Brie.from(item));

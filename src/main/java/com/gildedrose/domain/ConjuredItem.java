@@ -14,7 +14,7 @@ public class ConjuredItem extends Item {
         return new ConjuredItem(item);
     }
 
-    public static Function<com.gildedrose.Item, Option<Item>> factory(){
+    public static Function<com.gildedrose.Item, Option<Item>> architect (){
         return (item1 -> {
             if(item1.name.contains("Conjured")){
                 return Option.of(ConjuredItem.from(item1));

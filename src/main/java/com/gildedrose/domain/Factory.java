@@ -20,4 +20,13 @@ public class Factory {
         }
         throw new RuntimeException("This item does not match any of the previous rules");
     }
+
+    public static Factory standardSetOfItems () {
+        return new Factory(
+                Brie.factory(),
+                BackstagePass.factory(),
+                Sulfuras.factory(),
+                ConjuredItem.factory(),
+                Item.factory());
+    }
 }

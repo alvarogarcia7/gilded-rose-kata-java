@@ -35,6 +35,12 @@ I've decided to handle this refactoring kata as a legacy codebase and do not add
 
 For the new behavior, on the other hand, it's now easy to create unit tests, follows a request from business to expand the behavior, so I've added unit tests
 
+### Ubiquituous language
+
+The `ItemProductionCenter` is where `Item`s are produced
+
+
+
 [gildedrose]: https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/master/Java
 [emilybache]: https://github.com/emilybache
 

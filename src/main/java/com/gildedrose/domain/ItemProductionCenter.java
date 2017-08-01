@@ -11,6 +11,15 @@ public class ItemProductionCenter {
         this.factories = factories;
     }
 
+    public static ItemProductionCenter standardSetOfItems () {
+        return new ItemProductionCenter(
+                Brie.architect(),
+                BackstagePass.architect(),
+                Sulfuras.architect(),
+                ConjuredItem.architect(),
+                Item.architect());
+    }
+
     public Item build (final com.gildedrose.Item item) {
         for (final Function<com.gildedrose.Item, Option<Item>> factory : factories) {
             Option<Item> apply = factory.apply(item);
@@ -19,14 +28,5 @@ public class ItemProductionCenter {
             }
         }
         throw new RuntimeException("This item does not match any of the previous rules");
-    }
-
-    public static ItemProductionCenter standardSetOfItems () {
-        return new ItemProductionCenter(
-                Brie.architect(),
-                BackstagePass.architect(),
-                Sulfuras.architect(),
-                ConjuredItem.architect(),
-                Item.architect());
     }
 }

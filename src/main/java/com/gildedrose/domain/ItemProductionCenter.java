@@ -7,7 +7,7 @@ import java.util.function.Function;
 public class ItemProductionCenter {
     private final Function<com.gildedrose.Item, Option<Item>>[] factories;
 
-    public ItemProductionCenter (final Function<com.gildedrose.Item, Option<Item>>... factories) {
+    private ItemProductionCenter (final Function<com.gildedrose.Item, Option<Item>>... factories) {
         this.factories = factories;
     }
 

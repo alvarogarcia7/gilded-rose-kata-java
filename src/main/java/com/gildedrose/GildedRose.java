@@ -11,7 +11,7 @@ class GildedRose {
         setFactory(Factory.standardSetOfItems());
     }
 
-    private void setFactory (final Factory factory) {
+    public void setFactory (final Factory factory) {
         this.factory = factory;
     }
 
